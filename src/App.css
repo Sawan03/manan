@@ -1,38 +1,261 @@
+/* General Body Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Main App Container */
 .App {
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Styles */
+.app-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 0;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-link svg {
+  height: 32px;
+  width: auto;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+/* Search Icon */
+.search-icon svg {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  fill: none;
+  stroke: black;
+}
+
+/* Top Stories Section Styles */
+.top-stories-section {
+  padding: 40px 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.explore-all-btn {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.explore-all-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+.section-description {
+  margin: 0 0 30px;
+  color: #666;
+}
+
+/* Stories Grid Styles */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Story Card Styles */
+.story-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.story-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.story-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.story-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.story-excerpt {
+  margin: 0 0 15px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.story-author {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: auto;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+}
+
+.author-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.story-author span {
+  font-weight: 600;
+  font-size: 14px;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto; /* Pushes the actions to the right */
+}
+
+.search-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.join-link,
+.signin-link {
+  font-size: 14px;
+  color: #6c6c6c;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.join-link:hover,
+.signin-link:hover {
+  color: #000;
+}
+
+.create-story-btn {
+  background-color: #1b1b1b;
   color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px solid;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.create-story-btn:hover {
+  background-color: #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
   }
+}
+
+@media (max-width: 576px) {
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
 }

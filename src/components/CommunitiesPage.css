@@ -1,0 +1,121 @@
+/* General Page Layout */
+.communities-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+  background-color: #f8f8f8; /* Light grey background */
+}
+
+/* Header */
+.communities-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.communities-header h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.communities-header p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* Navigation/Filter Bar */
+.communities-filter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee; /* Subtle separator */
+  padding-bottom: 15px;
+}
+
+.communities-filter-nav button {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  color: #555;
+}
+
+.communities-filter-nav button:hover {
+  background-color: #e0e0e0;
+}
+
+.communities-filter-nav button.active {
+  background-color: #333; /* Darker background for active */
+  color: #fff;
+  border-color: #333;
+}
+
+/* Community Grid */
+.communities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 20px;
+}
+
+/* Community Card */
+.community-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+}
+
+.community-card-image {
+  height: 150px; /* Fixed height for image area */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end; /* Align name to bottom */
+  padding: 15px;
+  color: #fff; /* White text for community name */
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+}
+
+.community-name {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+.community-card-content {
+  padding: 15px;
+  flex-grow: 1; /* Allows content to expand */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.community-description {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.community-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  color: #777;
+}
+
+.community-stats span {
+  margin-right: 10px; /* Space between stats */
+}
