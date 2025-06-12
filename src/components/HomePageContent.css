@@ -9,26 +9,40 @@
   margin: 0 auto;
   padding: 40px 20px;
 }
-
 .top-section {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
   margin-bottom: 40px;
 }
 
-.top-section > div {
-  flex: 1;
+.top-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.top-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin: 8px 0 0;
 }
 
 .explore-btn {
   background-color: white;
   color: #333;
   border: 1px solid #ccc;
-  padding: 10px 20px;
+  padding: 10px 24px;
   border-radius: 9999px;
   cursor: pointer;
   font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.explore-btn:hover {
+  background-color: #f3f4f6;
 }
 
 .homepage-grid {
