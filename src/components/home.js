@@ -90,13 +90,16 @@ const HomePageContent = () => {
   return (
     <div className="homepage">
       <main className="homepage-main">
-        <section className="top-section">
-          <div>
-            <h2 className="top-title">Top Stories</h2>
-            <p className="top-subtitle">Find new, handpicked stories you'll love, updated daily.</p>
-          </div>
-          <button className="explore-btn">Explore All</button>
-        </section>
+      <section className="top-section">
+  <div className="top-section-left">
+    <h2 className="top-title">Top Stories</h2>
+    <p className="top-subtitle">Find new, handpicked stories you'll love, updated daily.</p>
+  </div>
+  <div className="top-section-right">
+    <button className="explore-btn">Explore All</button>
+  </div>
+</section>
+
 
         <div className="homepage-grid">
           <div className="left-column">
