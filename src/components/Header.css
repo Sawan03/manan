@@ -1,11 +1,11 @@
-.app-header {
-  width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.header-container {
+  max-width: 1200px; /* Limits the *content* width, but centers it */
+  margin: 0 auto; /* Centers the content within the 100% width header */
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
 }
 
 .header-container {
@@ -99,6 +99,42 @@
   align-items: center;
   gap: 20px;
 }
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1b1b1b;
+  font-weight: 600;
+}
+
+.logo-img {
+  height: 32px;
+  margin-right: 8px;
+}
+
+.logo-title {
+  font-size: 18px;
+}
+
+.mobile-actions {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Show mobile buttons only when nav is open on small screens */
+@media (max-width: 768px) {
+  .right-section {
+    display: none;
+  }
+
+  .main-nav.nav-open .mobile-actions {
+    display: flex;
+  }
+}
+
 
 /* For mobile screens */
 @media (max-width: 768px) {
@@ -198,5 +234,143 @@
 
   .header-container {
     gap: 8px;
+  }
+}
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Header container */
+.app-header {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+/* Logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1b1b1b;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 8px;
+}
+
+.logo-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* Desktop right section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hide nav toggle by default */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #1b1b1b;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+/* Animate toggle when open */
+.nav-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Navigation styles */
+.main-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .right-section {
+    display: none; /* Hide desktop right section on mobile */
+  }
+
+  /* Show toggle on mobile */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hide nav by default on mobile */
+  .main-nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    z-index: 9999;
+  }
+
+  /* Show nav when navOpen */
+  .main-nav.nav-open {
+    transform: translateY(0);
+  }
+
+  /* Mobile action buttons */
+  .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .mobile-actions button {
+    width: 100%;
   }
 }

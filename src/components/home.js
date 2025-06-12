@@ -1,5 +1,12 @@
 import React from 'react';
 import './HomePageContent.css';
+import TopStories from './TopStories';
+import Challenges from './Challenges';
+import Creators from './Creators'; // Make sure Creators.js exists in components
+import Resources from './resources'; // Make sure resources.js exists in components
+import CommunitiesPage from './CommunitiesPage';
+import Footer from './Footer';
+
 
 const StoryCard = ({ image, title, description, authorName, authorAvatar, contentWarning = false }) => {
   return (
@@ -46,37 +53,37 @@ const HomePageContent = () => {
   const bottomStories = [
     {
       id: 2,
-      image: 'https://placehold.co/400x300/FCA5A5/FFFFFF?text=Story+1',
+      image: 'https://images.unsplash.com/photo-1528738984120-effa2ecf6abc?fit=crop&fm=jpg&h=375&ixid=M3wzNTY3MHwwfDF8YWxsfHx8fHx8fHx8MTc0OTMzNzU3MXw&ixlib=rb-4.1.0&q=75&w=625&utm_medium=referral&utm_source=vocal.media',
       title: 'Dear Sister',
       description: 'Dear Sister, Don\'t worry, I\'m right behind you...',
-      authorName: 'Author 1',
-      authorAvatar: 'https://placehold.co/24x24/FCA5A5/FFFFFF?text=A1',
+      authorName: 'Lore S. Crown',
+      authorAvatar: 'https://res.cloudinary.com/jerrick/image/upload/c_thumb,h_120,pg_1,q_40,w_120/684830992e1ae8001de45617.jpg',
       contentWarning: true,
     },
     {
       id: 3,
-      image: 'https://placehold.co/400x300/FDBA74/FFFFFF?text=Story+2',
+      image: 'https://images.unsplash.com/photo-1513682121497-80211f36a7d3?fit=crop&fm=jpg&h=375&ixid=M3wzNTY3MHwwfDF8YWxsfHx8fHx8fHx8MTc0OTEzODc0OHw&ixlib=rb-4.1.0&q=75&w=625&utm_medium=referral&utm_source=vocal.media',
       title: 'Who Are The Truly Scary People In Our World',
       description: 'A deep dive into the shadows of human nature...',
-      authorName: 'Author 2',
-      authorAvatar: 'https://placehold.co/24x24/FDBA74/FFFFFF?text=A2',
+      authorName: 'Kendall Defoe',
+      authorAvatar: 'https://res.cloudinary.com/jerrick/image/upload/c_thumb,h_108,pg_1,q_60,w_108/nbi4hv1tqyzmejetlmoo.jpg',
     },
     {
       id: 4,
-      image: 'https://placehold.co/400x300/9BE8D8/FFFFFF?text=Story+3',
+      image: 'https://res.cloudinary.com/jerrick/image/upload/c_fill,d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,h_375,pg_1,q_auto,w_625/6843a494f07e56001dc5b645.jpg',
       title: 'I\'ve had PTSD',
       description: 'PTSD is flooring me at the moment...',
-      authorName: 'Author 3',
-      authorAvatar: 'https://placehold.co/24x24/9BE8D8/FFFFFF?text=A3',
+      authorName: 'Rob',
+      authorAvatar: 'https://res.cloudinary.com/jerrick/image/upload/c_thumb,h_120,pg_1,q_40,w_120/653aeaf5a88d15001da20502.jpg',
       contentWarning: true,
     },
     {
       id: 5,
-      image: 'https://placehold.co/400x300/A78BFA/FFFFFF?text=Story+4',
+      image: 'https://res.cloudinary.com/jerrick/image/upload/c_fill,d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,h_375,pg_1,q_auto,w_625/6842d89a2a4552001d4bf6a2.jpg',
       title: 'Whistle in the Dark',
       description: 'Calamity bit and sucked and kissed with...',
-      authorName: 'Author 4',
-      authorAvatar: 'https://placehold.co/24x24/A78BFA/FFFFFF?text=A4',
+      authorName: 'Alex',
+      authorAvatar: 'https://res.cloudinary.com/jerrick/image/upload/c_thumb,h_120,pg_1,q_40,w_120/s7vbc68ubzt6iezjc5zp.jpg',
     },
   ];
 
@@ -120,12 +127,11 @@ const HomePageContent = () => {
               </div>
             ))}
 
+            
+
             <section className="story-grid">
               {bottomStories.map((story) => (
-                <StoryCard
-                  key={story.id}
-                  {...story}
-                />
+                <StoryCard key={story.id} {...story} />
               ))}
             </section>
           </div>
@@ -145,8 +151,18 @@ const HomePageContent = () => {
             </ul>
             <p className="learn-more">Learn more about how Vocal works</p>
           </div>
+          
         </div>
+        {/* ✅ TopStories inserted here */}
+            <TopStories />
+            <Challenges/>
+            <Creators/>
+            <Resources/>
+            <CommunitiesPage/>
+            <Footer/>
+            
       </main>
+      
     </div>
   );
 };

@@ -45,19 +45,19 @@ const stories = [
   },
    {
     id: 6,
-    image: 'https://res.cloudinary.com/jerrick/image/upload/c_fill,d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,h_375,pg_1,q_auto,w_625/6840d83cff6334001de1c0b5.png',
-    title: 'Happy Birthday!',
+    image: 'https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/67b8e8d9fd8708001d7338c5.jpg',
+    title: 'Glass Dolls',
     excerpt: '“Happy birthday, buddy!” My dad says, bringing out the excessively decorated cake into the living room with the rest o...',
-    author: 'AJ',
-    authorImage: 'https://randomuser.me/api/portraits/men/1.jpg',
+    author: 'Dana Crandell',
+    authorImage: 'https://res.cloudinary.com/jerrick/image/upload/c_thumb,h_108,pg_1,q_60,w_108/6543cb7480e6e7001d4510f7.jpg',
   },
    {
     id: 7,
-    image: 'https://res.cloudinary.com/jerrick/image/upload/c_fill,d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,h_375,pg_1,q_auto,w_625/6840d83cff6334001de1c0b5.png',
-    title: 'Happy Birthday!',
-    excerpt: '“Happy birthday, buddy!” My dad says, bringing out the excessively decorated cake into the living room with the rest o...',
-    author: 'AJ',
-    authorImage: 'https://randomuser.me/api/portraits/men/1.jpg',
+    image: 'https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/67ce23b5b81fc6001da64693.jpg',
+    title: 'The Absolutely Unfree Life of a Valley Girl',
+    excerpt: '“A Review of “Earth to Moon: A Memoir” by Moon Unit Zappa',
+    author: ' Kendall Defoe',
+    authorImage: 'https://res.cloudinary.com/jerrick/image/upload/c_thumb,h_108,pg_1,q_60,w_108/nbi4hv1tqyzmejetlmoo.jpg',
   },
    {
     id: 8,
@@ -67,23 +67,7 @@ const stories = [
     author: 'AJ',
     authorImage: 'https://randomuser.me/api/portraits/men/1.jpg',
   },
-   {
-    id: 9,
-    image: 'https://res.cloudinary.com/jerrick/image/upload/c_fill,d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,h_375,pg_1,q_auto,w_625/6840d83cff6334001de1c0b5.png',
-    title: 'Happy Birthday!',
-    excerpt: '“Happy birthday, buddy!” My dad says, bringing out the excessively decorated cake into the living room with the rest o...',
-    author: 'AJ',
-    authorImage: 'https://randomuser.me/api/portraits/men/1.jpg',
-  },
-   {
-    id: 10,
-    image: 'https://res.cloudinary.com/jerrick/image/upload/c_fill,d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,h_375,pg_1,q_auto,w_625/6840d83cff6334001de1c0b5.png',
-    title: 'Happy Birthday!',
-    excerpt: '“Happy birthday, buddy!” My dad says, bringing out the excessively decorated cake into the living room with the rest o...',
-    author: 'AJ',
-    authorImage: 'https://randomuser.me/api/portraits/men/1.jpg',
-  },
-
+   
   
 ];
 

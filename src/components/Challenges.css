@@ -1,0 +1,233 @@
+/* General Reset & Body Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000; /* Overall dark background */
+  color: #fff;
+  line-height: 1.5; /* Improved readability */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* --- Challenges Page Container --- */
+.challenges-page__container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px; /* Overall padding for the page, removed max-width for full desktop size */
+  width: 100%; /* Ensure it takes full width */
+  box-sizing: border-box; /* Include padding in element's total width/height */
+  background-color: #000;
+}
+
+/* --- Challenges Header Section --- */
+.challenges-header {
+  text-align: left;
+  margin-bottom: 30px;
+  position: relative; /* For positioning the Explore All button */
+  width: 100%; /* Ensure header spans full container width */
+  max-width: 1200px; /* Optional: Keep content centered within a max-width, or remove for truly edge-to-edge */
+  margin: 0 auto; /* Center header content */
+}
+
+.challenges-header__title {
+  font-size: 2.5em;
+  margin: 0 0 5px 0;
+  font-weight: 700;
+}
+
+.challenges-header__subtitle {
+  font-size: 1.1em;
+  color: #bbb;
+  margin: 0;
+}
+
+.explore-all-button {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.explore-all-button:hover {
+  background-color: #333;
+  border-color: #fff;
+}
+
+
+/* --- Challenges Grid Container --- */
+.challenges-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%; /* Ensure grid takes full container width */
+  max-width: 1200px; /* Optional: Keep grid content centered within a max-width */
+  margin: 0 auto; /* Center grid content */
+}
+
+/* --- Challenge Card Styles --- */
+.challenge-card {
+  background-color: transparent; /* No solid background for the card itself */
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Not explicitly visible in the image */
+}
+
+.challenge-card:hover {
+  transform: translateY(-5px);
+}
+
+.challenge-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Fixed height for the image */
+  overflow: hidden; /* Ensure V+ badge is clipped if too big */
+}
+
+.challenge-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area, cropping if necessary */
+  display: block; /* Remove extra space below image */
+}
+
+.challenge-card__type-indicator {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(255, 0, 0, 0.8); /* Red background for V+ */
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+  z-index: 10; /* Ensure it's above the image */
+}
+
+.challenge-card__content {
+  padding: 15px;
+  background-color: #1a1a1a; /* Dark background for the content area */
+  flex-grow: 1; /* Allows content to take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes footer to bottom */
+}
+
+.challenge-card__title {
+  font-size: 1.3em; /* Slightly larger title */
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.challenge-card__description {
+  font-size: 0.95em;
+  color: #bbb;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allows description to take available space */
+}
+
+.challenge-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85em;
+  color: #888;
+}
+
+.challenge-card__grand-prize {
+  margin: 0;
+}
+
+.challenge-card__time-left {
+  margin: 0;
+}
+
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+@media (max-width: 1024px) {
+  .challenges-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .challenges-header__title {
+    font-size: 2.2em;
+  }
+  .challenges-header__subtitle {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .challenges-page__container {
+    padding: 30px 15px;
+  }
+  .challenges-header {
+    text-align: center; /* Center header text on smaller screens */
+    margin-bottom: 25px;
+  }
+  .explore-all-button {
+    position: static; /* Position normally within flow */
+    margin-top: 15px; /* Add space below subtitle */
+    display: block; /* Take full width */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .challenges-header__title {
+    font-size: 2em;
+  }
+  .challenges-header__subtitle {
+    font-size: 0.95em;
+  }
+  .challenges-grid-container {
+    grid-template-columns: 1fr; /* Single column on tablets */
+  }
+  .challenge-card__image-wrapper {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .challenges-page__container {
+    padding: 20px 10px;
+  }
+  .challenges-header__title {
+    font-size: 1.8em;
+  }
+  .challenges-header__subtitle {
+    font-size: 0.9em;
+  }
+  .challenge-card__image-wrapper {
+    height: 150px;
+  }
+  .challenge-card__title {
+    font-size: 1.1em;
+  }
+  .challenge-card__description {
+    font-size: 0.85em;
+  }
+  .challenge-card__footer {
+    font-size: 0.75em;
+  }
+}
