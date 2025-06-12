@@ -82,9 +82,12 @@ function Resources() {
       <div className="resources-page-container">
         {/* Header Section */}
         <div className="resources-header">
-          <h1 className="resources-title">Resources</h1>
-          <a href="#" className="explore-all-button">Explore All</a>
-        </div>
+  <div className="resources-header-left">
+    <h1 className="resources-title">Resources</h1>
+  </div>
+ 
+</div>
+
 
         {/* Subtitle */}
         <p className="resources-subtitle">
