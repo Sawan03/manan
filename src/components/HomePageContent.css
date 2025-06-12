@@ -90,7 +90,6 @@
   gap: 20px;
 }
 
-/* Story Card */
 .story-card {
   background: white;
   border: 1px solid #ccc;
@@ -207,4 +206,68 @@
   cursor: pointer;
   font-size: 14px;
   text-decoration: underline;
+}
+
+/* ✅ Responsive Media Queries */
+@media (max-width: 1024px) {
+  .homepage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .right-column {
+    position: relative;
+    top: 0;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-title {
+    font-size: 20px;
+  }
+
+  .featured-description {
+    font-size: 14px;
+  }
+
+  .creator-title {
+    font-size: 20px;
+  }
+
+  .creator-subtitle {
+    font-size: 15px;
+  }
+
+  .creator-text,
+  .creator-list {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-main {
+    padding: 20px 10px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-image {
+    height: 160px;
+  }
+
+  .story-title {
+    font-size: 16px;
+  }
+
+  .story-description {
+    font-size: 13px;
+  }
+
+  .explore-btn,
+  .creator-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
